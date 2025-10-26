@@ -26,17 +26,28 @@ def compareTriplets(a, b)
   end
 
   r.push(alice, bob)
-  puts r
+  return r
 end
 
-#fptr = File.open(ENV['OUTPUT_PATH'], 'w')
-fptr = File.open('file.txt', 'w')
+fptr = File.open(ENV['OUTPUT_PATH'], 'w')
+#fptr = File.open('file.txt', 'w')
+
+r = ""
 
 a = gets.rstrip.split.map(&:to_i)
 
 b = gets.rstrip.split.map(&:to_i)
 
 result = compareTriplets(a, b)
+
+for i in 0..result.length do
+  if i == result.length then
+    r += "#{result[i]}"
+  end
+  r += "#{result[i]} "
+end
+
+print "#{r}\n"
 
 fptr.write result.join " "
 fptr.write "\n"

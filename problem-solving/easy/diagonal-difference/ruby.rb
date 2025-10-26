@@ -13,22 +13,22 @@ require 'stringio'
 def diagonalDifference(arr)
   d1 = 0
   d2 = 0
-  x = arr.length
+  x = arr.length - 1
 
-  for i in 0..arr.length do
-    for j in 0..arr.length do
+  for i in 0..(arr.length - 1) do
+    for j in 0..(arr.length - 1) do
       if i == j then
         d1 += arr[i][j]
       end
       
-      #while x >= 0 do
-      #  d2 += arr[x][j]
-      #  x -= 1
-      #end
+      if x >= 0 then
+        d2 += arr[x][j]
+          
+        x -= 1
+      end
     end
-  end 
-
-  puts (d1 - d2).abs
+  end
+  return (d1 - d2).abs
 end
 
 #fptr = File.open(ENV['OUTPUT_PATH'], 'w')
@@ -39,10 +39,11 @@ n = gets.strip.to_i
 arr = Array.new(n)
 
 n.times do |i|
-    arr[i] = gets.rstrip.split.map(&:to_i)
+  arr[i] = gets.rstrip.split.map(&:to_i)
 end
 
 result = diagonalDifference arr
+puts result
 
 fptr.write result
 fptr.write "\n"
