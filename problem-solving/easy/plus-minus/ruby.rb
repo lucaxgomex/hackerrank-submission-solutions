@@ -17,7 +17,7 @@ require 'stringio'
 # The function accepts INTEGER_ARRAY arr as parameter.
 #
 
-def plusMinus(arr)
+def plusMinus(arr, size)
   r = []
   p = 0
   n = 0
@@ -35,15 +35,17 @@ def plusMinus(arr)
 
   r.push(p, n, z)
 
-  displayResult(r)
+  displayResult(r, size)
 end
 
-def displayResult(r)
-  
+def displayResult(r, size)
+  r.each do |item| 
+    puts Float(item) / size
+  end
 end
 
 n = gets.strip.to_i
 
 arr = gets.rstrip.split.map(&:to_i)
 
-plusMinus arr
+plusMinus(arr, n)
