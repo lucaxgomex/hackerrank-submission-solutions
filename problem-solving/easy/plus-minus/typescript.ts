@@ -22,19 +22,13 @@ function readLine(): string {
     return inputLines[currentLine++];
 }
 
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
 function plusMinus(arr: number[]): void {
-    let r: number[] = [];
+    let r: number = arr.length;
     let p: number = 0;
     let n: number = 0;
     let z: number = 0;
 
-    for (let i: number = 0; i < arr.length; i++) {
+    for (let i: number = 0; i < r; i++) {
         if (arr[i] > 0) {
             p ++;
         } else {
@@ -46,16 +40,13 @@ function plusMinus(arr: number[]): void {
         }
     }
 
-    r.push(p, n, z);
-    
-    r.forEach((index: number) => {
-        console.log(
-            index / arr.length
-        )
-    });   
+    console.log((p / r).toFixed(r));
+    console.log((n / r).toFixed(r));
+    console.log((z / r).toFixed(r));
 }
 
 function main() {
+    
     const n: number = parseInt(readLine().trim(), 10);
 
     const arr: number[] = readLine().replace(/\s+$/g, '').split(' ').map(arrTemp => parseInt(arrTemp, 10));

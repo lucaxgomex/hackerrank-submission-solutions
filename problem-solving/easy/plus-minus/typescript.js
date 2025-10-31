@@ -21,11 +21,11 @@ function readLine() {
  * The function accepts INTEGER_ARRAY arr as parameter.
  */
 function plusMinus(arr) {
-    var r = [];
+    var r = arr.length;
     var p = 0;
     var n = 0;
     var z = 0;
-    for (var i = 0; i < arr.length; i++) {
+    for (var i = 0; i < r; i++) {
         if (arr[i] > 0) {
             p++;
         }
@@ -38,10 +38,9 @@ function plusMinus(arr) {
             }
         }
     }
-    r.push(p, n, z);
-    r.forEach(function (index) {
-        console.log(index / arr.length);
-    });
+    console.log((p / r).toFixed(r));
+    console.log((n / r).toFixed(r));
+    console.log((z / r).toFixed(r));
 }
 function main() {
     var n = parseInt(readLine().trim(), 10);
