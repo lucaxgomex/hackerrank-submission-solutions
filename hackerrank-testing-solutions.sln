@@ -1,0 +1,35 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "problem-solving", "problem-solving", "{2C3DFE3F-A61B-57EB-6A6E-7EAE714A1C6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "easy", "easy", "{4C0B0F2C-4A05-8167-F556-FEAA41492BC8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "min-max-sum", "min-max-sum", "{9CCBB8B5-7789-1AFA-7978-270346068A6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "program", "problem-solving\easy\min-max-sum\program\program.csproj", "{101EA2FE-5064-2880-144A-660E126026A7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{101EA2FE-5064-2880-144A-660E126026A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101EA2FE-5064-2880-144A-660E126026A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101EA2FE-5064-2880-144A-660E126026A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101EA2FE-5064-2880-144A-660E126026A7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4C0B0F2C-4A05-8167-F556-FEAA41492BC8} = {2C3DFE3F-A61B-57EB-6A6E-7EAE714A1C6C}
+		{9CCBB8B5-7789-1AFA-7978-270346068A6B} = {4C0B0F2C-4A05-8167-F556-FEAA41492BC8}
+		{101EA2FE-5064-2880-144A-660E126026A7} = {9CCBB8B5-7789-1AFA-7978-270346068A6B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9176F3A-52D5-4CC6-B9BC-23E21D428920}
+	EndGlobalSection
+EndGlobal
