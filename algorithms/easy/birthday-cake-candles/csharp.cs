@@ -17,8 +17,7 @@ class Result
     public static int birthdayCakeCandles(List<int> candles)
     {
         int x = 0;
-        //int y = 0;
-        //int q = 0;
+        int count = 0;
 
         for (int i = 0; i < candles.Count; i++)
         {
@@ -27,17 +26,24 @@ class Result
                 x = candles[i];
             }
         }
-        return x;
-    }
 
+        for (int j = 0; j < candles.Count; j++)
+        {
+            if (x == candles[j])
+            {
+                count++;
+            }
+        }
+        
+        return count;
+    }
 }
 
 class Solution
 {
     public static void Main(string[] args)
     {
-        //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
-        //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
 
         int candlesCount = Convert.ToInt32(Console.ReadLine().Trim());
 
