@@ -14,8 +14,9 @@ using System;
 
 class Result
 {
-    public static string timeConversion(string s)
+    public static string TimeConversion(string s)
     {
+        /*
         List<string> newResult = new List<string>(
             "13",
             "14",
@@ -30,8 +31,32 @@ class Result
             "23",
             "24"
         );
+        */
+        string c = s[0..2];
 
-
+        if (s.Contains("AM"))
+        {
+            switch (c)
+            {
+                case 12:
+                    
+                    break;
+                default:
+                    return "";
+                    break;
+            }
+        } 
+        else
+        {
+            if (s.Contains("PM"))
+            {
+                return s[0..2];
+            } 
+            else
+            {
+                return "no information";
+            }
+        }        
     }
 }
 
@@ -44,7 +69,7 @@ class Solution
 
         string s = Console.ReadLine();
 
-        string result = Result.timeConversion(s);
+        string result = Result.TimeConversion(s);
 
         textWriter.WriteLine(result);
 
