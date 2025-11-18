@@ -16,47 +16,51 @@ class Result
 {
     public static string TimeConversion(string s)
     {
-        /*
-        List<string> newResult = new List<string>(
-            "13",
-            "14",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "20",
-            "21",
-            "22",
-            "23",
-            "24"
-        );
-        */
         string c = s[0..2];
 
-        if (s.Contains("AM"))
+        if (s.Contains("PM"))
         {
             switch (c)
             {
-                case 12:
-                    
+                case "01":
+                    s.Replace(c, "13");
                     break;
-                default:
-                    return "";
+                case "02":
+                    s.Replace(c, "14");
+                    break;
+                case "03":
+                    s.Replace(c, "15");
+                    break;
+                case "04":
+                    s.Replace(c, "16");
+                    break;
+                case "05":
+                    s.Replace(c, "17");
+                    break;
+                case "06":
+                    s.Replace(c, "18");
+                    break;
+                case "07":
+                    s.Replace(c, "19");
+                    break;
+                case "08":
+                    s.Replace(c, "20");
+                    break;
+                case "09":
+                    s.Replace(c, "21");
+                    break;
+                case "10":
+                    s.Replace(c, "22");
+                    break;
+                case "11":
+                    s.Replace(c, "23");
+                    break;
+                case "12":
+                    s.Replace(c, "00");
                     break;
             }
-        } 
-        else
-        {
-            if (s.Contains("PM"))
-            {
-                return s[0..2];
-            } 
-            else
-            {
-                return "no information";
-            }
-        }        
+        }
+        return c;   
     }
 }
 
