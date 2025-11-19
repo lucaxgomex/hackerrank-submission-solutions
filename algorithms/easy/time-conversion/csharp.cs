@@ -16,51 +16,73 @@ class Result
 {
     public static string TimeConversion(string s)
     {
-        string c = s[0..2];
+        List<string> newString = s.Split(':').ToList();
+        var charsToRemove = new string[] {"P", "M", "A"};
+        int i = newString.Count - 1;
 
         if (s.Contains("PM"))
         {
-            switch (c)
+            switch (newString[0])
             {
                 case "01":
-                    s.Replace(c, "13");
+                    newString[0] = "13";
                     break;
                 case "02":
-                    s.Replace(c, "14");
+                    newString[0] = "14";
                     break;
                 case "03":
-                    s.Replace(c, "15");
+                    newString[0] = "15";
                     break;
                 case "04":
-                    s.Replace(c, "16");
+                    newString[0] = "16";
                     break;
                 case "05":
-                    s.Replace(c, "17");
+                    newString[0] = "17";
                     break;
                 case "06":
-                    s.Replace(c, "18");
+                    newString[0] = "18";
                     break;
                 case "07":
-                    s.Replace(c, "19");
+                    newString[0] = "19";
                     break;
                 case "08":
-                    s.Replace(c, "20");
+                    newString[0] = "20";
                     break;
                 case "09":
-                    s.Replace(c, "21");
+                    newString[0] = "21";
                     break;
                 case "10":
-                    s.Replace(c, "22");
+                    newString[0] = "22";
                     break;
                 case "11":
-                    s.Replace(c, "23");
+                    newString[0] = "23";
                     break;
                 case "12":
-                    s.Replace(c, "00");
+                    if(s.Contains("AM"))
+                    {
+                        newString[0] = "00";
+                    }
+                    break;
+            }
+        } else
+        {
+            switch (newString[0])
+            {
+                case "12":
+                    if(s.Contains("AM"))
+                    {
+                        newString[0] = "00";
+                    }
                     break;
             }
         }
-        return c;   
+
+        foreach (var c in charsToRemove)
+        {
+            newString[i] = newString[i].Replace(c, string.Empty);
+        }
+        
+        return String.Join(":", newString);
     }
 }
 
@@ -68,8 +90,8 @@ class Solution
 {
     public static void Main(string[] args)
     {
-        //TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
-        TextWriter textWriter = new StreamWriter("file.txt", true);
+        TextWriter textWriter = new StreamWriter(@System.Environment.GetEnvironmentVariable("OUTPUT_PATH"), true);
+        //TextWriter textWriter = new StreamWriter("file.txt", true);
 
         string s = Console.ReadLine();
 
